@@ -11,11 +11,11 @@ def test_nodejs_package_installed(host):
 
 
 def test_nodejs_binary_exists(host):
-    assert host.file('/usr/bin/nodejs').exists
+    assert host.file('/usr/bin/node').exists
 
 
 def test_nodejs_binary_file(host):
-    assert host.file('/usr/bin/nodejs').is_file
+    assert host.file('/usr/bin/node').is_file
 
 
 def test_npm_binary_exists(host):
@@ -45,7 +45,7 @@ def test_nodejs_repo_file(host):
 
 
 def test_nodejs_binary_which(host):
-    assert host.check_output('which nodejs') == '/usr/bin/nodejs'
+    assert host.check_output('which node') == '/usr/bin/node'
 
 
 def test_npm_binary_which(host):
