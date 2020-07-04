@@ -1,0 +1,20 @@
+---
+# tasks file for nodejs - EL Family
+
+
+- name: EL Family | Adding repository for {{ nodejs_repo_el }}
+  yum_repository:
+    name: "{{ nodejs_repo_el_name }}"
+    description: "{{ nodejs_repo_el_description }}"
+    baseurl: "{{ nodejs_repo_el }}"
+    gpgcheck: "{{ nodejs_repo_el_gpgcheck }}"
+    gpgkey: "{{ nodejs_repo_el_gpgkey }}"
+    file: "{{ nodejs_repo_el_filename }}"
+    state: "{{ nodejs_repo_el_desired_state }}"
+    enabled: "{{ nodejs_repo_el_enabled }}"
+
+- name: EL Family | Installing {{ nodejs_app }}
+  yum:
+    name: "{{ nodejs_app }}"
+    state: "{{ nodejs_app_desired_state }}"
+    update_cache: yes
