@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/darkwizard242/ansible-role-nodejs.svg?branch=master)](https://travis-ci.com/darkwizard242/ansible-role-nodejs) ![Ansible Role](https://img.shields.io/ansible/role/47706?color=dark%20green%20) ![Ansible Role](https://img.shields.io/ansible/role/d/47706?label=role%20downloads) ![Ansible Quality Score](https://img.shields.io/ansible/quality/47706?label=ansible%20quality%20score) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-nodejs&metric=alert_status)](https://sonarcloud.io/dashboard?id=ansible-role-nodejs) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/darkwizard242/ansible-role-nodejs?label=release) ![GitHub repo size](https://img.shields.io/github/repo-size/darkwizard242/ansible-role-nodejs?color=orange&style=flat-square)
+[![Build Status](https://travis-ci.com/darkwizard242/ansible-role-nodejs.svg?branch=master)](https://travis-ci.com/darkwizard242/ansible-role-nodejs) ![Ansible Role](https://img.shields.io/ansible/role/49595?color=dark%20green%20) ![Ansible Role](https://img.shields.io/ansible/role/d/49595?label=role%20downloads) ![Ansible Quality Score](https://img.shields.io/ansible/quality/49595?label=ansible%20quality%20score) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-nodejs&metric=alert_status)](https://sonarcloud.io/dashboard?id=ansible-role-nodejs) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/darkwizard242/ansible-role-nodejs?label=release) ![GitHub repo size](https://img.shields.io/github/repo-size/darkwizard242/ansible-role-nodejs?color=orange&style=flat-square)
 
 # Ansible Role: nodejs
 
@@ -76,7 +76,7 @@ For default behaviour of role (i.e. installation of **nodejs** package) in ansib
     - darkwizard242.nodejs
 ```
 
-For customizing behavior of role (i.e. installing a 12.x as an example) in ansible playbooks.
+For customizing behavior of role (i.e. installing 12.x version of nodejs as an example) in ansible playbooks.
 
 ```yaml
 - hosts: servers
