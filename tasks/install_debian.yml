@@ -1,19 +1,19 @@
 ---
-# tasks file for nodejs - Debian family
+# tasks file for nodejs - Debian/Ubuntu family
 
-- name: Debian Family | Installing {{ nodejs_debian_pre_reqs }}
+- name: Debian/Ubuntu Family | Installing {{ nodejs_debian_pre_reqs }}
   apt:
     name: "{{ nodejs_debian_pre_reqs }}"
     state: "{{ nodejs_debian_pre_reqs_desired_state }}"
     force_apt_get: yes
     update_cache: yes
 
-- name: Debian Family | Add gpg signing key for {{ nodejs_app }}
+- name: Debian/Ubuntu Family | Add gpg signing key for {{ nodejs_app }}
   apt_key:
     url: "{{ nodejs_repo_debian_gpg_key }}"
     state: present
 
-- name: Debian Family | Adding repository "{{ nodejs_repo_debian }}"
+- name: Debian/Ubuntu Family | Adding repository "{{ nodejs_repo_debian }}"
   apt_repository:
     repo: "{{ nodejs_repo_debian }}"
     state: "{{ nodejs_repo_debian_desired_state }}"
@@ -21,7 +21,7 @@
     codename: "{{ ansible_lsb['codename'] }}"
     update_cache: yes
 
-- name: Debian Family | Installing {{ nodejs_app }}
+- name: Debian/Ubuntu Family | Installing {{ nodejs_app }}
   apt:
     name: "{{ nodejs_app }}"
     state: "{{ nodejs_app_desired_state }}"
