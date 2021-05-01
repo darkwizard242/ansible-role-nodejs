@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: nodejs
-  author: Ali Muhammad
+  author: darkwizard242
   description: Installs/Uninstalls 'nodejs'. A JavaScript runtime environment.
   company: none
   license: MIT
