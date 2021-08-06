@@ -42,25 +42,25 @@ nodejs_repo_el_desired_state: present
 
 ### Variables table:
 
-Variable                             | Value (default)                                                                                             | Description
------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-nodejs_app                           | nodejs                                                                                                      | Name of nodejs application package require to be installed i.e. `nodejs`
-nodejs_app_desired_state             | present                                                                                                     | State of the nodejs_app package. Whether to install, verify if available or to uninstall (i.e. ansible apt module values: `present`, `latest`, or `absent`)
-nodejs_version                       | 14.x                                                                                                        | Version of NodeJS to install.
-nodejs_debian_pre_reqs               | apt-transport-https, gnupg                                                                                  | NodeJS recommends the installation of both these packages on Debian family systems and as such, they are considered pre-requisites.
-nodejs_debian_pre_reqs_desired_state | present                                                                                                     | Desired state for NodeJS pre-requisite apps on Debian family systems.
-nodejs_repo_debian_gpg_key           | <https://deb.nodesource.com/gpgkey/nodesource.gpg.key>                                                      | NodeJS GPG key required on Debian family systems
-nodejs_repo_debian                   | deb <https://deb.nodesource.com/node_{{> nodejs_version }} {{ ansible_lsb['codename'] }} main               | NodeJS repo URL for Debain family systems. Utilized facts such as `ansible_lsb['codename']`.
-nodejs_repo_debain_filename          | "{{ nodejs_app }}"                                                                                          | Name of the repository file that will be stored at `/etc/apt/sources.list.d/` on Debian based systems.
-nodejs_repo_debian_desired_state     | present                                                                                                     | `present` indicates creating the repository file if it doesn't exist on Debian based systems. Alternative is `absent` (not recommended as it will prevent from installation of **nodejs** package).
-nodejs_repo_el                       | <https://rpm.nodesource.com/pub_{{> nodejs_version }}/el/{{ ansible_distribution_major_version }}/$basearch | Repository `baseurl` for NodeJS on EL based systems. Utilizes `ansible_distribution_major_version` ansible fact to set appropriate version of EL system.
-nodejs_repo_el_name                  | nodesource                                                                                                  | Repository name for NodeJS on EL based systems.
-nodejs_repo_el_description           | Node.js EL Family Repo                                                                                      | Description to be added in EL based repository file for NodeJS.
-nodejs_repo_el_gpgkey                | <https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL>                                           | NodeJS GPG key required on EL family systems
-nodejs_repo_el_gpgcheck              | yes                                                                                                         | Boolean for whether to perform gpg check against NodeJS on EL based systems.
-nodejs_repo_el_enabled               | yes                                                                                                         | Boolean to set so that NodeJS repository is enabled on EL based systems.
-nodejs_repo_el_filename              | "{{ nodejs_app }}"                                                                                          | Name of the repository file that will be stored at `/yum/sources.list.d/nodejs.repo` on EL based systems.
-nodejs_repo_el_desired_state         | present                                                                                                     | `present` indicates creating the repository file if it doesn't exist on EL based systems. Alternative is `absent` (not recommended as it will prevent from installation of **nodejs** package).
+Variable                             | Description
+------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+nodejs_app                           | Name of nodejs application package require to be installed i.e. `nodejs`
+nodejs_app_desired_state             | State of the nodejs_app package. Whether to install, verify if available or to uninstall (i.e. ansible apt module values: `present`, `latest`, or `absent`)
+nodejs_version                       | Version of NodeJS to install.
+nodejs_debian_pre_reqs               | NodeJS recommends the installation of both these packages on Debian family systems and as such, they are considered pre-requisites.
+nodejs_debian_pre_reqs_desired_state | Desired state for NodeJS pre-requisite apps on Debian family systems.
+nodejs_repo_debian_gpg_key           | NodeJS GPG key required on Debian family systems
+nodejs_repo_debian                   | NodeJS repo URL for Debain family systems. Utilized facts such as `ansible_lsb['codename']`.
+nodejs_repo_debain_filename          | Name of the repository file that will be stored at `/etc/apt/sources.list.d/` on Debian based systems.
+nodejs_repo_debian_desired_state     | `present` indicates creating the repository file if it doesn't exist on Debian based systems. Alternative is `absent` (not recommended as it will prevent from installation of **nodejs** package).
+nodejs_repo_el                       | Repository `baseurl` for NodeJS on EL based systems. Utilizes `ansible_distribution_major_version` ansible fact to set appropriate version of EL system.
+nodejs_repo_el_name                  | Repository name for NodeJS on EL based systems.
+nodejs_repo_el_description           | Description to be added in EL based repository file for NodeJS.
+nodejs_repo_el_gpgkey                | NodeJS GPG key required on EL family systems
+nodejs_repo_el_gpgcheck              | Boolean for whether to perform gpg check against NodeJS on EL based systems.
+nodejs_repo_el_enabled               | Boolean to set so that NodeJS repository is enabled on EL based systems.
+nodejs_repo_el_filename              | Name of the repository file that will be stored at `/yum/sources.list.d/nodejs.repo` on EL based systems.
+nodejs_repo_el_desired_state         | `present` indicates creating the repository file if it doesn't exist on EL based systems. Alternative is `absent` (not recommended as it will prevent from installation of **nodejs** package).
 
 ## Dependencies
 
