@@ -2,7 +2,7 @@
 
 # Ansible Role: nodejs
 
-Role to install (_by default_) [nodejs](https://github.com/nodejs/node) package or uninstall (_if passed as var_) on Debian based systems and EL based systems. **nodejs** is a JavaScript runtime environment. **npm** & **npx** are also installed as part of this role. The default version is set to install version `14.x` of NodeJS unless explicitly specified to install any other specific version as the repository's source is based on that.
+Role to install (_by default_) [nodejs](https://github.com/nodejs/node) package or uninstall (_if passed as var_) on Debian based systems and EL based systems. **nodejs** is a JavaScript runtime environment. **npm** & **npx** are also installed as part of this role. The default version is set to install version `16.x` of NodeJS unless explicitly specified to install any other specific version as the repository's source is based on that.
 
 ## Requirements
 
@@ -17,7 +17,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 ```yaml
 nodejs_app: nodejs
 nodejs_app_desired_state: present
-nodejs_version: 14.x
+nodejs_version: 16.x
 
 # Debian family based
 nodejs_debian_pre_reqs:
@@ -83,7 +83,7 @@ For customizing behavior of role (i.e. installing 12.x version of nodejs as an e
   roles:
     - darkwizard242.nodejs
   vars:
-    nodejs_version: 12.x
+    nodejs_version: 14.x
 ```
 
 For customizing behavior of role (i.e. un-installation of **nodejs** package) in ansible playbooks.
@@ -102,4 +102,4 @@ For customizing behavior of role (i.e. un-installation of **nodejs** package) in
 
 ## Author Information
 
-This role was created by [Ali Muhammad](https://www.linkedin.com/in/ali-muhammad-759791130/).
+This role was created by [Ali Muhammad](https://www.alimuhammad.dev/).

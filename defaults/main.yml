@@ -3,7 +3,7 @@
 
 nodejs_app: nodejs
 nodejs_app_desired_state: present
-nodejs_version: 14.x
+nodejs_version: 16.x
 
 # Debian family based
 nodejs_debian_pre_reqs:
