@@ -3,7 +3,7 @@
 
 
 - name: EL Family | Adding repository for {{ nodejs_repo_el }}
-  yum_repository:
+  ansible.builtin.yum_repository:
     name: "{{ nodejs_repo_el_name }}"
     description: "{{ nodejs_repo_el_description }}"
     baseurl: "{{ nodejs_repo_el }}"
@@ -14,7 +14,7 @@
     enabled: "{{ nodejs_repo_el_enabled }}"
 
 - name: EL Family | Installing {{ nodejs_app }}
-  yum:
+  ansible.builtin.yum:
     name: "{{ nodejs_app }}"
     state: "{{ nodejs_app_desired_state }}"
     update_cache: yes
